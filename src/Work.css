@@ -1,0 +1,47 @@
+.work-page {
+  min-height: 100vh;
+  background: #080808;
+  color: white;
+  padding: 80px 5vw;
+}
+
+.work-page h1 {
+  font-size: clamp(60px, 10vw, 150px);
+  margin: 0 0 80px;
+  letter-spacing: -6px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.work-card {
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.work-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 700px) {
+  .work-page {
+    padding: 50px 20px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
