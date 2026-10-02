@@ -706,7 +706,7 @@ function App() {
     <Reveal className="delay-2 contact-new-action">
 
       <a
-        href="mailto:hello@act2react.com"
+        href="mailto:hello.act2react@gmail.com"
         className="contact-new-card"
       >
 
@@ -745,7 +745,7 @@ function App() {
 
       <span>EMAIL</span>
 
-      <a href="mailto:hello@act2react.com">
+      <a href="mailto:hello.act2react@gmail.com">
         hello.act2react@gmail.com
       </a>
 <span>PHONE NO.</span>
