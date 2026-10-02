@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Work from "./Work.jsx";
+
+
 
 const projects = [
   {
