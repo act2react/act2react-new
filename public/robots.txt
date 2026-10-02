@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://act2react.in/sitemap.xml
+Sitemap: https://www.act2react.in/sitemap.xml
