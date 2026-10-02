@@ -10,28 +10,28 @@ const projects = [
     type: "Logo Design · Brand Strategy · Visual Identity",
     year: "2026",
     image:
-      "1201 task 1.jpg",
+      "/work/1201 task 1.jpg",
   },
   {
     title: "UI / UX DESIGN",
     type: "Digital experiences that feel right.",
     year: "2026",
     image:
-      "uiux.png",
+      "/work/uiux.png",
   },
   {
     title: "SOCIAL MEDIA",
     type: "Content built to stop the scroll.",
     year: "2025",
     image:
-      "social.jpg",
+      "/work/social.jpg",
   },
   {
     title: "PHOTO & VIDEO",
     type: "Visuals that make people look twice.",
     year: "2026",
     image:
-      "photo.jpg",
+      "/work/photo.jpg",
   },
 ];
 
@@ -321,7 +321,7 @@ function App() {
               <div className="about-image">
 
                 <img
-                  src="About.png"
+                  src="/work/About.png"
                   alt="Creative team"
                 />
 
