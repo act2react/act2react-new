@@ -560,11 +560,12 @@ function App() {
 
           <div className="work-more">
 
-            <Reveal>
-
-  
-
-            </Reveal>
+          <Reveal>
+  <a href="https://www.instagram.com/act2.react/" target="_blank" className="work-more-button">
+    <span>EXPLORE MORE</span>
+    <strong>↗</strong>
+  </a>
+</Reveal>
 
           </div>
 
