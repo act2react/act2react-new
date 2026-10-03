@@ -4,7 +4,7 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
-
+import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
 import "./ServicePage.css";
@@ -17,7 +17,7 @@ function ServicePage({
   intro,
   services,
 }) {
-      const cursorRef = useRef(null);
+  const cursorRef = useRef(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -34,6 +34,7 @@ function ServicePage({
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
+
   const heroRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -71,15 +72,51 @@ function ServicePage({
     ["0%", "100%"]
   );
 
- return (
-  <main className="service-page">
+  return (
+    <main className="service-page">
 
-    <div
-      className="service-cursor"
-      ref={cursorRef}
-    ></div>
+      {/* =====================================================
+          SERVICE NAVBAR
+          ===================================================== */}
 
-      {/* HERO */}
+      <nav className="service-navbar">
+
+        {/* LOGO → HOME */}
+
+       <Link
+  to="/"
+  className="service-navbar-logo"
+  aria-label="ACT2REACT Home"
+>
+  ACT<span>2</span>REACT
+</Link>
+
+
+        {/* HOME → HOME */}
+
+        <Link
+          to="/"
+          className="service-navbar-home"
+          aria-label="Back to home"
+        >
+          <span>←</span>
+          <span>HOME</span>
+        </Link>
+
+      </nav>
+
+
+      {/* CUSTOM CURSOR */}
+
+      <div
+        className="service-cursor"
+        ref={cursorRef}
+      ></div>
+
+
+      {/* =====================================================
+          HERO
+          ===================================================== */}
 
       <section
         className="service-hero"
@@ -174,6 +211,7 @@ function ServicePage({
 
         </motion.div>
 
+
         <motion.div
           className="scroll-indicator"
           style={{
@@ -187,7 +225,9 @@ function ServicePage({
       </section>
 
 
-      {/* INTRO */}
+      {/* =====================================================
+          INTRO
+          ===================================================== */}
 
       <section className="service-intro">
 
@@ -237,7 +277,9 @@ function ServicePage({
       </section>
 
 
-      {/* SERVICES */}
+      {/* =====================================================
+          SERVICES
+          ===================================================== */}
 
       <section className="service-capabilities">
 
@@ -294,7 +336,9 @@ function ServicePage({
       </section>
 
 
-      {/* CTA */}
+      {/* =====================================================
+          CTA
+          ===================================================== */}
 
       <section className="service-cta">
 
@@ -328,11 +372,12 @@ function ServicePage({
             <em>something great.</em>
           </h2>
 
+
           <a
             href="mailto:hello.act2react@gmail.com"
             className="service-cta-button"
           >
-            START A PROJECT
+            <span>START A PROJECT</span>
             <strong>↗</strong>
           </a>
 
