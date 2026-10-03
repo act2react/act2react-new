@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.act2react.in/</loc>
   </url>
+
+  <url>
+    <loc>https://www.act2react.in/brand-strategy</loc>
+  </url>
+
+  <url>
+    <loc>https://www.act2react.in/creative-direction</loc>
+  </url>
+
+  <url>
+    <loc>https://www.act2react.in/social-media</loc>
+  </url>
+
+  <url>
+    <loc>https://www.act2react.in/digital-marketing</loc>
+  </url>
+
+  <url>
+    <loc>https://www.act2react.in/content</loc>
+  </url>
+
+  <url>
+    <loc>https://www.act2react.in/web-design</loc>
+  </url>
+
 </urlset>
