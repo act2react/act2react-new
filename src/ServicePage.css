@@ -1,0 +1,890 @@
+.service-page {
+  background: #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.service-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 7vw;
+
+  overflow: hidden;
+}
+
+.service-hero-inner {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.service-number {
+  margin-bottom: 35px;
+
+  font-size: 11px;
+  letter-spacing: 0.18em;
+
+  color: #bcfc1f;
+}
+
+.service-hero h1 {
+  margin: 0;
+
+  font-size: clamp(
+    70px,
+    11vw,
+    180px
+  );
+
+  line-height: 0.82;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+
+  max-width: 100%;
+}
+
+.service-hero h1 span {
+  color: #bcfc1f;
+}
+
+.service-line {
+  width: 100%;
+  height: 1px;
+
+  margin-top: 55px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  transform-origin: left;
+}
+
+.service-hero p {
+  max-width: 620px;
+
+  margin-top: 35px;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 40px;
+  right: 7vw;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  font-size: 10px;
+  letter-spacing: 0.15em;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-indicator span {
+  font-size: 18px;
+  color: #bcfc1f;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.service-intro {
+  min-height: 80vh;
+
+  padding: 160px 7vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.intro-label {
+  margin-bottom: 50px;
+
+  color: #bcfc1f;
+
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.service-intro h2 {
+  max-width: 1100px;
+
+  margin: 0;
+
+  font-size: clamp(
+    45px,
+    7vw,
+    110px
+  );
+
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
+
+.service-capabilities {
+  padding: 120px 7vw;
+}
+
+.capabilities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-size: 10px;
+  letter-spacing: 0.15em;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.capabilities-list {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.capability {
+  display: grid;
+
+  grid-template-columns:
+    80px
+    minmax(0, 1fr)
+    40px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  min-height: 130px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition:
+    padding 0.5s ease,
+    background 0.5s ease;
+}
+
+.capability:last-child {
+  border-bottom: 0;
+}
+
+.capability > span {
+  color: #bcfc1f;
+  font-size: 11px;
+}
+
+.capability h3 {
+  margin: 0;
+
+  min-width: 0;
+
+  font-size: clamp(
+    30px,
+    4vw,
+    60px
+  );
+
+  font-weight: 400;
+  letter-spacing: -0.04em;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.capability strong {
+  font-size: 22px;
+  font-weight: 400;
+
+  color: #bcfc1f;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.capability:hover {
+  padding-left: 25px;
+}
+
+.capability:hover h3 {
+  transform: translateX(10px);
+}
+
+.capability:hover strong {
+  transform: translate(5px, -5px);
+}
+
+
+/* =========================================================
+   CTA SECTION
+   ========================================================= */
+
+.service-cta {
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 7vw;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cta-inner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.cta-inner > span {
+  display: block;
+
+  color: #bcfc1f;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.cta-inner h2 {
+  margin: 35px 0 50px;
+
+  font-size: clamp(
+    60px,
+    9vw,
+    140px
+  );
+
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  font-weight: 400;
+}
+
+.cta-inner h2 em {
+  color: #bcfc1f;
+  font-style: normal;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+   ========================================================= */
+
+.service-cta-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  padding: 18px 30px;
+
+  border: 1px solid #bcfc1f;
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* GREEN BACKGROUND */
+
+.service-cta-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: #bcfc1f;
+
+  transform: scaleX(0);
+
+  transform-origin: left center;
+
+  transition:
+    transform 0.45s cubic-bezier(
+      0.77,
+      0,
+      0.18,
+      1
+    );
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* TEXT WRAPPER */
+
+.service-cta-button span,
+.service-cta-button strong {
+  position: relative;
+
+  display: inline-block;
+
+  z-index: 5;
+
+  color: inherit;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* ARROW / STRONG */
+
+.service-cta-button strong {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* HOVER */
+
+.service-cta-button:hover {
+  color: #000;
+  border-color: #bcfc1f;
+}
+
+.service-cta-button:hover::before {
+  transform: scaleX(1);
+}
+
+.service-cta-button:hover span {
+  color: #000;
+}
+
+.service-cta-button:hover strong {
+  color: #000;
+
+  transform:
+    translate(5px, -5px);
+}
+
+
+/* =========================================================
+   DESKTOP CUSTOM CURSOR
+   ========================================================= */
+
+.service-cursor {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #bcfc1f;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  transform:
+    translate3d(-100px, -100px, 0);
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+
+  mix-blend-mode: normal;
+}
+
+@media (min-width: 701px) {
+  .service-page,
+  .service-page a,
+  .service-page button {
+    cursor: none;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .service-hero {
+    padding: 110px 6vw;
+  }
+
+  .service-intro {
+    padding: 130px 6vw;
+  }
+
+  .service-capabilities {
+    padding: 100px 6vw;
+  }
+
+  .service-cta {
+    padding: 100px 6vw;
+  }
+
+  .service-hero h1 {
+    font-size: clamp(
+      65px,
+      12vw,
+      130px
+    );
+  }
+
+  .service-intro h2 {
+    font-size: clamp(
+      42px,
+      8vw,
+      85px
+    );
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(
+      55px,
+      10vw,
+      100px
+    );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .service-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* HERO */
+
+  .service-hero {
+    min-height: 100svh;
+
+    padding:
+      100px
+      25px
+      90px;
+
+    align-items: center;
+  }
+
+  .service-hero-inner {
+    width: 100%;
+  }
+
+  .service-number {
+    margin-bottom: 25px;
+
+    font-size: 10px;
+  }
+
+  .service-hero h1 {
+    font-size: clamp(
+      58px,
+      18vw,
+      100px
+    );
+
+    line-height: 0.86;
+
+    letter-spacing: -0.055em;
+
+    word-break: normal;
+  }
+
+  .service-line {
+    margin-top: 35px;
+  }
+
+  .service-hero p {
+    max-width: 100%;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+
+  /* SCROLL */
+
+  .scroll-indicator {
+    bottom: 25px;
+    right: 25px;
+
+    gap: 12px;
+
+    font-size: 8px;
+  }
+
+  .scroll-indicator span {
+    font-size: 16px;
+  }
+
+
+  /* INTRO */
+
+  .service-intro {
+    min-height: auto;
+
+    padding:
+      100px
+      25px
+      110px;
+  }
+
+  .intro-label {
+    margin-bottom: 30px;
+
+    font-size: 10px;
+  }
+
+  .service-intro h2 {
+    max-width: 100%;
+
+    font-size: clamp(
+      38px,
+      11vw,
+      65px
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+  }
+
+
+  /* CAPABILITIES */
+
+  .service-capabilities {
+    padding:
+      90px
+      25px
+      100px;
+  }
+
+  .capabilities-header {
+    padding-bottom: 18px;
+
+    font-size: 8px;
+
+    gap: 15px;
+  }
+
+  .capability {
+    grid-template-columns:
+      35px
+      minmax(0, 1fr)
+      25px;
+
+    gap: 12px;
+
+    min-height: 95px;
+
+    padding: 18px 0;
+  }
+
+  .capability > span {
+    font-size: 9px;
+  }
+
+  .capability h3 {
+    font-size: clamp(
+      25px,
+      7.5vw,
+      42px
+    );
+
+    line-height: 1;
+  }
+
+  .capability strong {
+    font-size: 18px;
+  }
+
+  .capability:hover {
+    padding-left: 8px;
+  }
+
+  .capability:hover h3 {
+    transform: translateX(5px);
+  }
+
+  .capability:hover strong {
+    transform: translate(
+      3px,
+      -3px
+    );
+  }
+
+
+  /* CTA */
+
+  .service-cta {
+    min-height: 75vh;
+
+    padding:
+      90px
+      25px;
+  }
+
+  .cta-inner {
+    width: 100%;
+  }
+
+  .cta-inner > span {
+    font-size: 9px;
+  }
+
+  .cta-inner h2 {
+    margin:
+      25px 0
+      40px;
+
+    font-size: clamp(
+      48px,
+      14vw,
+      75px
+    );
+
+    line-height: 0.88;
+
+    letter-spacing: -0.05em;
+  }
+
+
+  /* CTA BUTTON */
+
+  .service-cta-button {
+    width: auto;
+    max-width: 100%;
+
+    padding:
+      16px
+      22px;
+
+    gap: 20px;
+
+    border-radius: 10px;
+
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .service-cta-button strong {
+    font-size: 16px;
+  }
+
+  .service-cta-button:hover strong {
+    transform:
+      translate(
+        3px,
+        -3px
+      );
+  }
+
+
+  /* NO CUSTOM CURSOR ON MOBILE */
+
+  .service-cursor {
+    display: none;
+  }
+
+  .service-page,
+  .service-page a,
+  .service-page button {
+    cursor: auto;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .service-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .service-intro {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .service-capabilities {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .service-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .service-hero h1 {
+    font-size: 17vw;
+  }
+
+  .service-intro h2 {
+    font-size: 10.5vw;
+  }
+
+  .capability {
+    grid-template-columns:
+      30px
+      minmax(0, 1fr)
+      20px;
+
+    gap: 8px;
+  }
+
+  .capability h3 {
+    font-size: 7vw;
+  }
+
+  .service-cta-button {
+    padding:
+      15px
+      18px;
+
+    gap: 14px;
+  }
+
+  .service-cta-button strong {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .service-cursor {
+    display: none;
+  }
+
+  .service-page,
+  .service-page a,
+  .service-page button {
+    cursor: auto;
+  }
+
+  .service-cta-button:hover {
+    color: #fff;
+  }
+
+  .service-cta-button:hover::before {
+    transform: scaleX(0);
+  }
+
+  .service-cta-button:active {
+    color: #000;
+  }
+
+  .service-cta-button:active::before {
+    transform: scaleX(1);
+  }
+
+  .service-cta-button:active span,
+  .service-cta-button:active strong {
+    color: #000;
+  }
+
+}
+/* CTA BUTTON TEXT FIX */
+
+.service-cta-button {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.service-cta-button span,
+.service-cta-button strong {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 1;
+  text-shadow: none;
+}
+
+/* Hover: strong black text against green */
+.service-cta-button:hover,
+.service-cta-button:hover span,
+.service-cta-button:hover strong {
+  color: #000000;
+  opacity: 1;
+}

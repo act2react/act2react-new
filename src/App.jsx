@@ -1,8 +1,15 @@
 import { useEffect, useRef, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
 
+import BrandStrategy from "./BrandStrategy";
+import CreativeDirection from "./CreativeDirection";
+import SocialMedia from "./SocialMedia";
+import DigitalMarketing from "./DigitalMarketing";
+import Content from "./Content";
+import WebDesign from "./WebDesign";
 
 const projects = [
   {
@@ -35,6 +42,7 @@ const projects = [
   },
 ];
 
+
 const services = [
   ["01", "Brand Strategy", "Position your brand to mean something."],
   ["02", "Creative Direction", "Build a visual world people remember."],
@@ -44,6 +52,7 @@ const services = [
   ["06", "Web & UI/UX", "Digital experiences built to perform."],
 ];
 
+
 const process = [
   ["01", "Discover", "We understand your business, audience and ambition."],
   ["02", "Define", "We turn insights into a clear creative direction."],
@@ -51,6 +60,7 @@ const process = [
   ["04", "Launch", "We put the work into the world."],
   ["05", "Grow", "We learn, optimise and scale what works."],
 ];
+
 
 function Reveal({ children, className = "" }) {
   return (
@@ -60,10 +70,12 @@ function Reveal({ children, className = "" }) {
   );
 }
 
-function App() {
+
+function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const cursorRef = useRef(null);
   const progressRef = useRef(null);
+
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -71,20 +83,25 @@ function App() {
 
     if (!cursor) return;
 
+
     const moveCursor = (e) => {
       cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     };
 
+
     const updateScroll = () => {
       const scrollTop = window.scrollY;
+
       const height =
         document.documentElement.scrollHeight - window.innerHeight;
 
       const percent = height > 0 ? (scrollTop / height) * 100 : 0;
 
+
       if (progress) {
         progress.style.width = `${percent}%`;
       }
+
 
       document.documentElement.style.setProperty(
         "--scroll-progress",
@@ -92,10 +109,12 @@ function App() {
       );
     };
 
+
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("scroll", updateScroll, { passive: true });
 
     updateScroll();
+
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -110,9 +129,11 @@ function App() {
       }
     );
 
+
     document.querySelectorAll(".reveal").forEach((el) => {
       revealObserver.observe(el);
     });
+
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
@@ -121,104 +142,203 @@ function App() {
     };
   }, []);
 
+
   const closeMenu = () => setMenuOpen(false);
+
 
   return (
     <div className="site">
 
+
       {/* SCROLL PROGRESS */}
-      <div className="scroll-progress" ref={progressRef}></div>
+
+      <div
+        className="scroll-progress"
+        ref={progressRef}
+      ></div>
+
 
       {/* CUSTOM CURSOR */}
-      <div className="custom-cursor" ref={cursorRef}></div>
+
+      <div
+        className="custom-cursor"
+        ref={cursorRef}
+      ></div>
+
 
       {/* NAVIGATION */}
+
       <header className="navbar">
 
-        <a href="#home" className="brand" onClick={closeMenu}>
+        <a
+          href="#home"
+          className="brand"
+          onClick={closeMenu}
+        >
           ACT<span>2</span>REACT
         </a>
 
-        <nav className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#services" onClick={closeMenu}>Services</a>
-          <a href="#work" onClick={closeMenu}>Work</a>
-          <a href="#process" onClick={closeMenu}>Process</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+
+        <nav
+          className={`nav-links ${
+            menuOpen ? "mobile-open" : ""
+          }`}
+        >
+
+          <a
+            href="#about"
+            onClick={closeMenu}
+          >
+            About
+          </a>
+
+          <a
+            href="#services"
+            onClick={closeMenu}
+          >
+            Services
+          </a>
+
+          <a
+            href="#work"
+            onClick={closeMenu}
+          >
+            Work
+          </a>
+
+          <a
+            href="#process"
+            onClick={closeMenu}
+          >
+            Process
+          </a>
+
+          <a
+            href="#contact"
+            onClick={closeMenu}
+          >
+            Contact
+          </a>
+
         </nav>
 
-        <a href="#contact" className="nav-cta">
+
+        <a
+          href="#contact"
+          className="nav-cta"
+        >
           Start a project <span>↗</span>
         </a>
 
+
         <button
-          className={`menu-toggle ${menuOpen ? "active" : ""}`}
+          className={`menu-toggle ${
+            menuOpen ? "active" : ""
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
+
           <span></span>
           <span></span>
+
         </button>
 
       </header>
 
 
       {/* HERO */}
+
       <main>
 
-        <section id="home" className="hero section-snap">
+        <section
+          id="home"
+          className="hero section-snap"
+        >
 
           <div className="hero-grid">
+
 
             <div className="hero-copy">
 
               <Reveal>
+
                 <div className="eyebrow">
                   INDEPENDENT CREATIVE & DIGITAL STUDIO
                 </div>
+
               </Reveal>
+
 
               <Reveal className="delay-1">
+
                 <h1>
-                  CREATE
+                  Digital
                   <br />
-                  <span>REACTION.</span>
+                  <span>Marketing.</span>
                 </h1>
+
               </Reveal>
+
 
               <Reveal className="delay-2">
+
                 <p className="hero-text">
-                  We build brands, experiences and digital
-                  campaigns that turn attention into action.
+                  ACT2REACT is a creative and digital marketing agency
+                  building brands, digital experiences and campaigns
+                  that turn attention into action.
                 </p>
+
               </Reveal>
 
+
               <Reveal className="delay-3">
+
                 <div className="hero-actions">
 
-                  <a href="#work" className="lime-button">
+                  <a
+                    href="#work"
+                    className="lime-button"
+                  >
                     Explore our work
                     <span>↗</span>
                   </a>
 
-                  <a href="#about" className="text-link">
+
+                  <a
+                    href="#about"
+                    className="text-link"
+                  >
                     Discover ACT2REACT
                     <span>↓</span>
                   </a>
 
                 </div>
+
               </Reveal>
+
 
               <div className="hero-meta">
 
                 <div>
+
                   <span>BASED IN</span>
-                  <strong>HYDERABAD / INDIA</strong>
+
+                  <strong>
+                    HYDERABAD / INDIA
+                  </strong>
+
                 </div>
 
+
                 <div>
+
                   <span>AVAILABLE FOR</span>
-                  <strong>SELECT PROJECTS</strong>
+
+                  <strong>
+                    CREATIVE PROJECTS
+                  </strong>
+
                 </div>
 
               </div>
@@ -236,19 +356,23 @@ function App() {
               <div className="hero-orbit orbit-b"></div>
               <div className="hero-orbit orbit-c"></div>
 
+
               <div className="hero-core">
 
                 <div className="core-ring"></div>
 
                 <div className="core-text">
+
                   ACT
                   <br />
                   <span>2</span>
                   <br />
                   REACT
+
                 </div>
 
               </div>
+
 
               <div className="floating-label label-a">
                 STRATEGY
@@ -261,6 +385,7 @@ function App() {
               <div className="floating-label label-c">
                 GROWTH
               </div>
+
 
               <div className="hero-scroll">
                 <span></span>
@@ -282,23 +407,47 @@ function App() {
 
             <span>BRAND</span>
             <i>✦</i>
+
             <span>CREATE</span>
             <i>✦</i>
+
             <span>CONNECT</span>
             <i>✦</i>
+
             <span>GROW</span>
             <i>✦</i>
+
             <span>REACT</span>
             <i>✦</i>
 
+
             <span>BRAND</span>
             <i>✦</i>
+
             <span>CREATE</span>
             <i>✦</i>
+
             <span>CONNECT</span>
             <i>✦</i>
+
             <span>GROW</span>
             <i>✦</i>
+
+            <span>REACT</span>
+
+
+            <span>BRAND</span>
+            <i>✦</i>
+
+            <span>CREATE</span>
+            <i>✦</i>
+
+            <span>CONNECT</span>
+            <i>✦</i>
+
+            <span>GROW</span>
+            <i>✦</i>
+
             <span>REACT</span>
 
           </div>
@@ -308,11 +457,15 @@ function App() {
 
         {/* ABOUT */}
 
-        <section id="about" className="about section-snap">
+        <section
+          id="about"
+          className="about section-snap"
+        >
 
           <div className="section-number">
             01 / ABOUT
           </div>
+
 
           <div className="about-grid">
 
@@ -340,22 +493,27 @@ function App() {
             <div className="about-content">
 
               <Reveal>
+
                 <div className="eyebrow">
                   WE ARE ACT2REACT
                 </div>
+
               </Reveal>
 
+
               <Reveal className="delay-1">
+
                 <h2>
                   We create brands
                   <br />
                   <span>that move.</span>
                 </h2>
+
               </Reveal>
 
-             
 
               <Reveal className="delay-2">
+
                 <p>
                   ACT2REACT is a creative and digital growth
                   studio built for brands that want to move
@@ -364,12 +522,22 @@ function App() {
                   us character. Digital gives us reach.
                   Together, they create momentum.
                 </p>
+
               </Reveal>
+
 
               <Reveal className="delay-4">
 
-                <a href="#contact" className="circle-link">
-                  <span>WORK<br />WITH US</span>
+                <a
+                  href="#contact"
+                  className="circle-link"
+                >
+                  <span>
+                    WORK
+                    <br />
+                    WITH US
+                  </span>
+
                   <strong>↗</strong>
                 </a>
 
@@ -383,22 +551,33 @@ function App() {
           <div className="stats-row">
 
             <div>
-              <strong>50<span>+</span></strong>
+              <strong>
+                50<span>+</span>
+              </strong>
               <p>Brands & Projects</p>
             </div>
 
+
             <div>
-              <strong>100<span>+</span></strong>
+              <strong>
+                100<span>+</span>
+              </strong>
               <p>Creative Deliverables</p>
             </div>
 
+
             <div>
-              <strong>360<span>°</span></strong>
+              <strong>
+                360<span>°</span>
+              </strong>
               <p>Digital Thinking</p>
             </div>
 
+
             <div>
-              <strong>24<span>/7</span></strong>
+              <strong>
+                24<span>/7</span>
+              </strong>
               <p>Ideas in Motion</p>
             </div>
 
@@ -409,106 +588,144 @@ function App() {
 
         {/* SERVICES */}
 
-        <section id="services" className="services section-snap">
+        <section
+          id="services"
+          className="services section-snap"
+        >
 
           <div className="section-number">
             02 / SERVICES
           </div>
 
+
           <div className="services-heading">
 
             <Reveal>
+
               <div className="eyebrow">
                 WHAT WE DO
               </div>
+
             </Reveal>
 
+
             <Reveal className="delay-1">
+
               <h2>
                 Built around
                 <br />
                 <span>your growth.</span>
               </h2>
+
             </Reveal>
 
           </div>
 
 
-          <div className="services-list">
+        <div className="services-list">
 
-            {services.map((service, index) => (
+  {services.map((service, index) => {
 
-              <Reveal
-                className={`service-row delay-${Math.min(index + 1, 4)}`}
-                key={service[0]}
-              >
+    const serviceLinks = {
+      "01": "/brand-strategy",
+      "02": "/creative-direction",
+      "03": "/social-media",
+      "04": "/digital-marketing",
+      "05": "/content",
+      "06": "/web-design",
+    };
 
-                <span className="service-number">
-                  {service[0]}
-                </span>
+    return (
+      <Reveal
+        className={`service-row delay-${Math.min(index + 1, 4)}`}
+        key={service[0]}
+      >
 
-                <h3>
-                  {service[1]}
-                </h3>
+        {/* FULL ROW CLICKABLE LINK */}
+        <a
+          href={serviceLinks[service[0]]}
+          className="service-row-link"
+          aria-label={`View ${service[1]}`}
+        ></a>
 
-                <p>
-                  {service[2]}
-                </p>
+        {/* EXISTING CONTENT — DO NOT CHANGE */}
+        <span className="service-number">
+          {service[0]}
+        </span>
 
-                <span className="service-arrow">
-                  ↗
-                </span>
+        <h3>
+          {service[1]}
+        </h3>
 
-              </Reveal>
+        <p>
+          {service[2]}
+        </p>
 
-            ))}
+        <span className="service-arrow">
+          ↗
+        </span>
 
-          </div>
+      </Reveal>
+    );
+  })}
+
+</div>
 
         </section>
 
 
         {/* WORK */}
 
-        <section id="work" className="work section-snap">
+        <section
+          id="work"
+          className="work section-snap"
+        >
 
           <div className="section-number">
             03 / SELECTED WORK
           </div>
+
 
           <div className="work-heading">
 
             <div>
 
               <Reveal>
+
                 <div className="eyebrow">
                   SELECTED WORK
                 </div>
+
               </Reveal>
 
+
               <Reveal className="delay-1">
+
                 <h2>
                   Ideas made
                   <br />
                   <span>visible.</span>
                 </h2>
+
               </Reveal>
 
             </div>
 
+
             <Reveal>
+
               <p>
                 A selection of identities, campaigns
                 and digital experiences created to
                 make brands move.
               </p>
+
             </Reveal>
 
           </div>
 
 
-          
-                    <div className="projects">
+          <div className="projects">
 
             {projects.map((project, index) => (
 
@@ -524,13 +741,19 @@ function App() {
                     alt={project.title}
                   />
 
+
                   <div className="project-overlay">
 
-                    <span>VIEW PROJECT</span>
+                    <span>
+                      VIEW PROJECT
+                    </span>
 
-                    <strong>↗</strong>
+                    <strong>
+                      ↗
+                    </strong>
 
                   </div>
+
 
                   <div className="project-index">
                     0{index + 1}
@@ -538,14 +761,25 @@ function App() {
 
                 </div>
 
+
                 <div className="project-info">
 
                   <div>
-                    <h3>{project.title}</h3>
-                    <span>{project.type}</span>
+
+                    <h3>
+                      {project.title}
+                    </h3>
+
+                    <span>
+                      {project.type}
+                    </span>
+
                   </div>
 
-                  <span>{project.year}</span>
+
+                  <span>
+                    {project.year}
+                  </span>
 
                 </div>
 
@@ -560,39 +794,59 @@ function App() {
 
           <div className="work-more">
 
-          <Reveal>
-  <a href="https://www.instagram.com/act2.react/" target="_blank" className="work-more-button">
-    <span>EXPLORE MORE</span>
-    <strong>↗</strong>
-  </a>
-</Reveal>
+            <Reveal>
+
+              <a
+                href="https://www.instagram.com/act2.react/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="work-more-button"
+              >
+
+                <span>
+                  EXPLORE MORE
+                </span>
+
+                <strong>
+                  ↗
+                </strong>
+
+              </a>
+
+            </Reveal>
 
           </div>
 
         </section>
 
-        
-
 
         {/* PROCESS */}
 
-        <section id="process" className="process section-snap">
+        <section
+          id="process"
+          className="process section-snap"
+        >
 
           <div className="section-number">
             04 / PROCESS
           </div>
+
 
           <div className="process-grid">
 
             <div className="process-intro">
 
               <Reveal>
+
                 <div className="eyebrow">
                   HOW WE WORK
                 </div>
+
               </Reveal>
 
+
               <Reveal className="delay-1">
+
                 <h2>
                   Think.
                   <br />
@@ -600,14 +854,18 @@ function App() {
                   <br />
                   <span>Move.</span>
                 </h2>
+
               </Reveal>
 
+
               <Reveal className="delay-2">
+
                 <p>
                   No unnecessary layers. No endless
                   meetings. Just a clear process from
                   idea to execution.
                 </p>
+
               </Reveal>
 
             </div>
@@ -618,18 +876,34 @@ function App() {
               {process.map((item, index) => (
 
                 <Reveal
-                  className={`process-item delay-${Math.min(index + 1, 4)}`}
+                  className={`process-item delay-${Math.min(
+                    index + 1,
+                    4
+                  )}`}
                   key={item[0]}
                 >
 
-                  <span>{item[0]}</span>
+                  <span>
+                    {item[0]}
+                  </span>
+
 
                   <div>
-                    <h3>{item[1]}</h3>
-                    <p>{item[2]}</p>
+
+                    <h3>
+                      {item[1]}
+                    </h3>
+
+                    <p>
+                      {item[2]}
+                    </p>
+
                   </div>
 
-                  <strong>↗</strong>
+
+                  <strong>
+                    ↗
+                  </strong>
 
                 </Reveal>
 
@@ -648,11 +922,13 @@ function App() {
 
           <div className="statement-line"></div>
 
+
           <Reveal>
 
             <p>
               GOOD BRANDS GET ATTENTION.
             </p>
+
 
             <h2>
               GREAT BRANDS
@@ -662,6 +938,7 @@ function App() {
 
           </Reveal>
 
+
           <div className="statement-line"></div>
 
         </section>
@@ -669,130 +946,257 @@ function App() {
 
         {/* CONTACT */}
 
-<section id="contact" className="contact-new section-snap">
+        <section
+          id="contact"
+          className="contact-new section-snap"
+        >
 
-  <div className="contact-new-top">
-    <span>05 / CONTACT</span>
-    <span>LET'S CREATE SOMETHING THAT MOVES.</span>
-  </div>
+          <div className="contact-new-top">
 
-  <div className="contact-new-content">
+            <span>
+              05 / CONTACT
+            </span>
 
-    <div className="contact-new-copy">
+            <span>
+              LET'S CREATE SOMETHING THAT MOVES.
+            </span>
 
-      <Reveal>
-        <div className="eyebrow">
-          HAVE AN IDEA?
-        </div>
-      </Reveal>
-
-      <Reveal className="delay-1">
-        <h2>
-          HELLO<span>.</span>
-        </h2>
-      </Reveal>
-
-      <Reveal className="delay-2">
-        <p>
-          Got a brand, campaign or digital experience
-          that deserves attention?
-          <br />
-          Let's turn the idea into a reaction.
-        </p>
-      </Reveal>
-
-    </div>
-
-
-    <Reveal className="delay-2 contact-new-action">
-
-      <a
-        href="mailto:hello.act2react@gmail.com"
-        className="contact-new-card"
-      >
-
-        <div className="contact-card-top">
-          <span>START A PROJECT</span>
-          <span>01 / 01</span>
-        </div>
-
-        <div className="contact-card-center">
-          <strong>
-            LET'S
-            <br />
-            TALK
-          </strong>
-
-          <div className="contact-arrow">
-            ↗
           </div>
-        </div>
-
-        <div className="contact-card-bottom">
-          <span>HELLO.ACT2REACT@GMAIL.COM</span>
-          <span>HYDERABAD / INDIA</span>
-        </div>
-
-      </a>
-
-    </Reveal>
-
-  </div>
 
 
-  <div className="contact-new-bottom">
+          <div className="contact-new-content">
 
-    <div className="contact-mini">
+            <div className="contact-new-copy">
 
-      <span>EMAIL</span>
+              <Reveal>
 
-      <a href="mailto:hello.act2react@gmail.com">
-        hello.act2react@gmail.com
-      </a>
-<span>PHONE NO.</span>
+                <div className="eyebrow">
+                  HAVE AN IDEA?
+                </div>
 
-      <a href="#">
-       +91 9121482525
-      </a>
-    </div>
+              </Reveal>
 
 
-    <div className="contact-mini">
+              <Reveal className="delay-1">
 
-      <span>SOCIAL</span>
+                <h2>
+                  HELLO<span>.</span>
+                </h2>
 
-      <div>
-        <a href="https://www.instagram.com/act2.react/" target="blank">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="https://www.youtube.com/@act2reactstudio" target="blank">YouTube</a>
-      </div>
-
-    </div>
+              </Reveal>
 
 
-    <div className="contact-mini contact-location">
+              <Reveal className="delay-2">
 
-      <span>LOCATION</span>
+                <p>
+                  Got a brand, campaign or digital experience
+                  that deserves attention?
+                  <br />
+                  Let's turn the idea into a reaction.
+                </p>
 
-      <p>Hyderabad, India</p>
+              </Reveal>
 
-    </div>
+            </div>
 
 
-    <a href="#home" className="contact-back">
-      BACK TO TOP ↑
-    </a>
+            <Reveal className="delay-2 contact-new-action">
 
-  </div>
+              <a
+                href="mailto:hello.act2react@gmail.com"
+                className="contact-new-card"
+              >
 
-</section>
+                <div className="contact-card-top">
+
+                  <span>
+                    START A PROJECT
+                  </span>
+
+                  <span>
+                    01 / 01
+                  </span>
+
+                </div>
+
+
+                <div className="contact-card-center">
+
+                  <strong>
+                    LET'S
+                    <br />
+                    TALK
+                  </strong>
+
+
+                  <div className="contact-arrow">
+                    ↗
+                  </div>
+
+                </div>
+
+
+                <div className="contact-card-bottom">
+
+                  <span>
+                    HELLO.ACT2REACT@GMAIL.COM
+                  </span>
+
+                  <span>
+                    HYDERABAD / INDIA
+                  </span>
+
+                </div>
+
+              </a>
+
+            </Reveal>
+
+          </div>
+
+
+          <div className="contact-new-bottom">
+
+
+            <div className="contact-mini">
+
+              <span>
+                EMAIL
+              </span>
+
+
+              <a href="mailto:hello.act2react@gmail.com">
+                hello.act2react@gmail.com
+              </a>
+
+
+              <span>
+                PHONE NO.
+              </span>
+
+
+              <a href="#">
+                +91 9121482525
+              </a>
+
+            </div>
+
+
+            <div className="contact-mini">
+
+              <span>
+                SOCIAL
+              </span>
+
+
+              <div>
+
+                <a
+                  href="https://www.instagram.com/act2.react/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+
+
+                <a href="#">
+                  LinkedIn
+                </a>
+
+
+                <a
+                  href="https://www.youtube.com/@act2reactstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  YouTube
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div className="contact-mini contact-location">
+
+              <span>
+                LOCATION
+              </span>
+
+              <p>
+                Hyderabad, India
+              </p>
+
+            </div>
+
+
+            <a
+              href="#home"
+              className="contact-back"
+            >
+              BACK TO TOP ↑
+            </a>
+
+          </div>
+
+        </section>
 
       </main>
 
-
-     
-
     </div>
+  );
+}
+
+
+/* =========================================================
+   ROUTES
+   ========================================================= */
+function App() {
+  return (
+    <Routes>
+
+      {/* HOMEPAGE */}
+
+      <Route
+        path="/"
+        element={<HomePage />}
+      />
+
+      {/* SERVICES */}
+
+      <Route
+        path="/brand-strategy"
+        element={<BrandStrategy />}
+      />
+
+    
+      <Route
+        path="/creative-direction"
+        element={<CreativeDirection />}
+      />
+
+      <Route
+        path="/social-media"
+        element={<SocialMedia />}
+      />
+
+      <Route
+        path="/digital-marketing"
+        element={<DigitalMarketing />}
+      />
+
+      <Route
+        path="/content"
+        element={<Content />}
+      />
+
+      <Route
+        path="/web-design"
+        element={<WebDesign />}
+      />
+
+    </Routes>
   );
 }
 
